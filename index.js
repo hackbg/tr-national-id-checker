@@ -1,7 +1,7 @@
 const soap = require('soap');
 const serviceUrl = 'https://tckimlik.nvi.gov.tr/Service/KPSPublic.asmx?wsdl';
 
-function verifyTurkishNationalId(args) {
+async function verifyTurkishNationalId(args) {
   const { id, name, surname, year } = args;
   const check = {
     TCKimlikNo: Number(id),
@@ -10,9 +10,8 @@ function verifyTurkishNationalId(args) {
     DogumYili: Number(year),
   };
 
-  checkStatus(check).then((result) => {
-    return result;
-  });
+  const result = await checkStatus(check).catch(console.log);
+  return result;
 }
 
 function checkStatus(request) {
@@ -30,5 +29,5 @@ function checkStatus(request) {
 }
 
 module.exports = {
-  verifyTurkishNationalId,
+  verify: verifyTurkishNationalId,
 };
