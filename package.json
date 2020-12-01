@@ -1,0 +1,14 @@
+{
+  "name": "tc-kimlik",
+  "version": "1.0.0",
+  "description": "Simple Turkish National ID check",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Milen Radkov <milenradkov@me.com>",
+  "license": "MIT",
+  "dependencies": {
+    "soap": "^0.35.0"
+  }
+}
